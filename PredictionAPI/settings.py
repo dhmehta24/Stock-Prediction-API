@@ -25,7 +25,7 @@ SECRET_KEY = 'zb-fn0dxpq(ev@vq&nkx(d^j0n^x%jso(#x1%w6r-t1csy9wvn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['predictionapiapp.herokuapp.com']
+ALLOWED_HOSTS = ['predictionapiapp.herokuapp.com','localhost']
 
 
 # Application definition
@@ -123,6 +123,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MODEL = os.path.join(BASE_DIR,'Predictor/stock_prediction_model')
+
+PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
+
+# Extra lookup directories for collectstatic to find static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
