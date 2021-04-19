@@ -165,7 +165,7 @@ pylint==2.6.0
 pyparsing==2.4.7
 PyPDF2==1.26.0
 Pyphen==0.10.0
-pypiwin32==223
+#pypiwin32==223
 pyrsistent==0.17.3
 pytesseract==0.3.7
 python-bidi==0.4.2
@@ -176,7 +176,7 @@ python3-openid==3.2.0
 pyttsx3==2.90
 pytube3==9.6.4
 pytz==2017.2
-pywin32==300
+#pywin32==300
 pywinpty==0.5.7
 pyxnat==1.4
 PyYAML==5.3.1
