@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Predictor.views import PredictionAPI
+from Predictor.views import PredictionAPI, ModelBuild
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('predict/',PredictionAPI.as_view()),
+    path('build_model/',ModelBuild.as_view()),
 ]

@@ -25,7 +25,7 @@ SECRET_KEY = 'zb-fn0dxpq(ev@vq&nkx(d^j0n^x%jso(#x1%w6r-t1csy9wvn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['predictionapiapp.herokuapp.com','localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MODEL = os.path.join(BASE_DIR,'Predictor/stock_prediction_model')
+MODEL = os.path.join(BASE_DIR,'Predictor/stock_predictiony_model')
 
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')

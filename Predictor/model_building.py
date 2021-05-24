@@ -14,7 +14,7 @@ from sklearn.metrics import mean_squared_error
 def build_model():
 
     today = date.today()
-    data = get_history(symbol= 'SBIN', start=date(today.year - 10 ,today.month, today.day ), end= today )
+    data = get_history(symbol= 'MRF', start=date(today.year - 10 ,today.month, today.day ), end= today )
     # data[['Close']].plot()
 
     data = data.filter(['Close'])
@@ -42,33 +42,20 @@ def build_model():
 
     model = Sequential()
 
-    model.add(LSTM(units = 50, return_sequences = True, input_shape = (X_train.shape[1], 1)))
-    model.add(Dropout(0.2))
-
-    model.add(LSTM(units = 50, return_sequences = True))
+    model.add(LSTM(units = 64, return_sequences = True, input_shape = (X_train.shape[1], 1)))
     model.add(Dropout(0.2))
 
     model.add(LSTM(units = 50))
     model.add(Dropout(0.2))
 
-    # model.add(LSTM(units = 50, return_sequences = True))
-    # model.add(Dropout(0.2))
+    model.add(Dense(units = 1))
 
-    # model.add(LSTM(units = 50, return_sequences = True))
-    # model.add(Dropout(0.2))
-
-    model.add(Dense(units = 2))
-
-    model.compile(optimizer = 'adam', loss = 'mean_squared_error', metrics=['accuracy'])
+    model.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
     model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.2)
-
-    #print(model.history['accuracy'])
 
     model.evaluate(X_train,y_train)
 
     model.save('stock_prediction_model')
 
-    #joblib.dump(model,"prediction_model.joblib")
 
-build_model()
