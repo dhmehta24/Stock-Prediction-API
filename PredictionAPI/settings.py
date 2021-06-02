@@ -25,7 +25,7 @@ SECRET_KEY = 'zb-fn0dxpq(ev@vq&nkx(d^j0n^x%jso(#x1%w6r-t1csy9wvn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['predictionapiapp.herokuapp.com']
 
 
 # Application definition
