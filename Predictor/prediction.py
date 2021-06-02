@@ -84,8 +84,6 @@ def predict(name):
 
     #result = predi_result.astype(np.int)
 
-    print(predi_result[0][0])
-
     return predi_result[0][0]
 
 
